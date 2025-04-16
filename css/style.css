@@ -1,0 +1,335 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: #ff007f;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.sidebar {
+    width: 220px;
+    max-height: 0;
+    padding: 100px 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+    /* Adiciona transições */
+    z-index: 1000;
+    background-color: transparent;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    /* Inicialmente invisível */
+    transform: translateY(-20px);
+    /* Move ligeiramente para cima */
+}
+
+.sidebar.open {
+    max-height: 500px;
+    pointer-events: auto;
+    opacity: 1;
+    /* Torna visível */
+    transform: translateY(0);
+    /* Reseta a posição */
+}
+
+.sidebar a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+}
+
+.sidebar a:hover {
+    color: #ff007f;
+    transform: translateX(10px);
+}
+
+.main-content {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px 60px;
+    background: url('background.jpg') no-repeat center/cover;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #000;
+}
+
+header p {
+    font-size: 1em;
+    color: #ff007f;
+    margin-bottom: 10px;
+}
+
+section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+
+.sobre,
+.skills,
+.resumo,
+.portfolio,
+.servicos,
+.contato {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.titulo-section {
+    color: #ff007f;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.conteudo-section {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: #000;
+}
+
+.botao {
+    display: inline-block;
+    margin: 15px 10px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: #000;
+    transition: background 0.3s;
+}
+
+.botao:hover {
+    background: #ff007f;
+    color: #fff;
+}
+
+footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer a {
+    color: #ff007f;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        align-items: center;
+    }
+}
+
+/* Estilo para as subseções */
+.subsecao {
+    margin-top: 20px;
+}
+
+.subsecao h3 {
+    font-size: 1.2em;
+    color: #ff007f;
+    margin-bottom: 10px;
+}
+
+.subsecao ul {
+    list-style: none;
+    padding: 0;
+}
+
+.subsecao ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+/* Estilo para as barras de nível */
+.barra-nivel {
+    margin: 30px 0;
+    position: relative;
+    text-align: left;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.barra-nivel span {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.barra-nivel .nivel {
+    height: 10px;
+    background-color: transparent;
+    transition: width 0.5s ease;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Estilo para o balão de nível */
+.barra-nivel .nivel::after {
+    content: attr(data-nivel);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    transform: translateX(50%);
+    background-color: #313131;
+    /* Alterado para a mesma cor da barra */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+/* Quina do balão */
+.barra-nivel .nivel::before {
+    content: '';
+    position: absolute;
+    top: -17px;
+    right: 0;
+    transform: translateX(50%);
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #313131;
+    /* Alterado para a mesma cor do balão */
+    z-index: 20;
+}
+
+.idiomas-carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.idioma-barra {
+    display: none;
+    width: 100%;
+    transition: opacity 0.3s;
+}
+
+.idioma-barra.ativo {
+    display: block;
+}
+
+.carrossel-btn {
+    background: #ff007f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.carrossel-btn:active {
+    background: #d6006b;
+}
+
+.carrossel-bolinhas {
+    justify-content: center;
+    align-items: center;
+}
+
+.bolinha {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    transition: background 0.2s;
+    outline: none;
+    padding: 0;
+}
+
+.bolinha.ativo {
+    background: #ff007f;
+    box-shadow: 0 0 0 2px #ff007f33;
+}
+
+.skills-carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.skills-barra {
+    display: none;
+    width: 100%;
+    transition: opacity 0.3s;
+}
+
+.skills-barra.ativo {
+    display: block;
+}
+
+.carrossel-bolinhas-skills {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.bolinha-skills {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    transition: background 0.2s;
+    outline: none;
+    padding: 0;
+}
+
+.bolinha-skills.ativo {
+    background: #ff007f;
+    box-shadow: 0 0 0 2px #ff007f33;
+}
