@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mateus Galvão - Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+            background: #ff007f;
+            color: #000;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .sidebar {
+            width: 220px;
+            max-height: 0;
+            padding: 100px 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+            /* Adiciona transições */
+            z-index: 1000;
+            background-color: transparent;
+            overflow: hidden;
+            pointer-events: none;
+            opacity: 0;
+            /* Inicialmente invisível */
+            transform: translateY(-20px);
+            /* Move ligeiramente para cima */
+        }
+
+        .sidebar.open {
+            max-height: 500px;
+            pointer-events: auto;
+            opacity: 1;
+            /* Torna visível */
+            transform: translateY(0);
+            /* Reseta a posição */
+        }
+
+        .sidebar a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+        }
+
+        .sidebar a:hover {
+            color: #ff007f;
+            transform: translateX(10px);
+        }
+
+        .main-content {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px 60px;
+            background: url('background.jpg') no-repeat center/cover;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #000;
+        }
+
+        header p {
+            font-size: 1em;
+            color: #ff007f;
+            margin-bottom: 10px;
+        }
+
+        section {
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .sobre,
+        .skills,
+        .resumo,
+        .portfolio,
+        .servicos,
+        .contato {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .titulo-section {
+            color: #ff007f;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+
+        .conteudo-section {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #000;
+        }
+
+        .botao {
+            display: inline-block;
+            margin: 15px 10px;
+            padding: 10px 20px;
+            border: 1px solid #000;
+            text-decoration: none;
+            color: #000;
+            transition: background 0.3s;
+        }
+
+        .botao:hover {
+            background: #ff007f;
+            color: #fff;
+        }
+
+        footer {
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer a {
+            color: #ff007f;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                align-items: center;
+            }
+        }
+
+        /* Estilo para as subseções */
+        .subsecao {
+            margin-top: 20px;
+        }
+
+        .subsecao h3 {
+            font-size: 1.2em;
+            color: #ff007f;
+            margin-bottom: 10px;
+        }
+
+        .subsecao ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .subsecao ul li {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        /* Estilo para as barras de nível */
+        .barra-nivel {
+            margin: 30px 0;
+            position: relative;
+            text-align: left;
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0;
+            overflow: visible;
+        }
+
+        .barra-nivel span {
+            display: block;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .barra-nivel .nivel {
+            height: 10px;
+            background-color: transparent;
+            transition: width 0.5s ease;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Estilo para o balão de nível */
+        .barra-nivel .nivel::after {
+            content: attr(data-nivel);
+            position: absolute;
+            top: -50px;
+            right: 0;
+            transform: translateX(50%);
+            background-color: #313131;
+            /* Alterado para a mesma cor da barra */
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            white-space: nowrap;
+            z-index: 20;
+        }
+
+        /* Quina do balão */
+        .barra-nivel .nivel::before {
+            content: '';
+            position: absolute;
+            top: -17px;
+            right: 0;
+            transform: translateX(50%);
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid #313131;
+            /* Alterado para a mesma cor do balão */
+            z-index: 20;
+        }
+
+        .idiomas-carrossel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .idioma-barra {
+            display: none;
+            width: 100%;
+            transition: opacity 0.3s;
+        }
+
+        .idioma-barra.ativo {
+            display: block;
+        }
+
+        .carrossel-btn {
+            background: #ff007f;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .carrossel-btn:active {
+            background: #d6006b;
+        }
+
+        .carrossel-bolinhas {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bolinha {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: none;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.2s;
+            outline: none;
+            padding: 0;
+        }
+
+        .bolinha.ativo {
+            background: #ff007f;
+            box-shadow: 0 0 0 2px #ff007f33;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="sidebar" id="sidebar">
+        <a href="#sobre">Sobre</a>
+        <a href="#resumo">Resumo</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <button class="sidebar-toggle" id="toggle-button" onclick="toggleSidebar()">☰</button>
+
+    <div class="main-content" id="main-content">
+        <header>
+            <p>Olá, seja bem-vindo!</p>
+            <h1>Eu sou Mateus Galvão</h1>
+            <p>Engenheiro de Dados | Cientista de Dados | Arquiteto de Dados</p>
+        </header>
+
+        <section id="sobre" class="sobre">
+            <div class="titulo-section">Sobre</div>
+            <div class="conteudo-section">
+                <p>Sou um amante da computação que busca explorar a capacidade de processamento das máquinas na extração
+                    de informações úteis de grandes massas de dados.</p>
+
+                <!-- Subseção Perfil -->
+                <div class="subsecao" id="perfil">
+                    <h3>Perfil</h3>
+                    <ul>
+                        <li><strong>Nome:</strong> Mateus Galvão</li>
+                        <li><strong>Data de Nascimento:</strong> 15 de março de 1990</li>
+                        <li><strong>Profissão:</strong> Engenheiro de Dados</li>
+                    </ul>
+                    <div class="idiomas-carrossel">
+                        <div style="flex:1; display: flex; flex-direction: column; align-items: center;">
+                            <div id="idioma-barras-container" style="width: 100%;">
+                                <div class="idioma-barra ativo">
+                                    <div class="barra-nivel">
+                                        <span>Português</span>
+                                        <div class="nivel" style="width: 100%; background-color: #ff007f;"
+                                            data-nivel="Nativo"></div>
+                                    </div>
+                                </div>
+                                <div class="idioma-barra">
+                                    <div class="barra-nivel">
+                                        <span>Inglês</span>
+                                        <div class="nivel" style="width: 75%; background-color: #ff007f;"
+                                            data-nivel="Fluente"></div>
+                                    </div>
+                                </div>
+                                <div class="idioma-barra">
+                                    <div class="barra-nivel">
+                                        <span>Espanhol</span>
+                                        <div class="nivel" style="width: 50%; background-color: #ff007f;"
+                                            data-nivel="Intermediário"></div>
+                                    </div>
+                                </div>
+                                <div class="idioma-barra">
+                                    <div class="barra-nivel">
+                                        <span>Francês</span>
+                                        <div class="nivel" style="width: 25%; background-color: #ff007f;"
+                                            data-nivel="Básico"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carrossel-bolinhas" style="margin-top: 18px; display: flex; gap: 10px;">
+                                <button class="bolinha ativo"></button>
+                                <button class="bolinha"></button>
+                                <button class="bolinha"></button>
+                                <button class="bolinha"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subseção Skills -->
+                <div class="subsecao" id="skills">
+                    <h3>Skills</h3>
+                    <div class="barra-nivel">
+                        <span>Python</span>
+                        <div class="nivel" style="width: 100%; background-color: #ff007f;" data-nivel="Avançado"></div>
+                    </div>
+                    <div class="barra-nivel">
+                        <span>SQL</span>
+                        <div class="nivel" style="width: 66.66%; background-color: #ff007f;" data-nivel="Intermediário">
+                        </div>
+                    </div>
+                    <div class="barra-nivel">
+                        <span>Power BI</span>
+                        <div class="nivel" style="width: 66.66%; background-color: #ff007f;" data-nivel="Intermediário">
+                        </div>
+                    </div>
+                    <div class="barra-nivel">
+                        <span>Machine Learning</span>
+                        <div class="nivel" style="width: 33.33%; background-color: #ff007f;" data-nivel="Básico"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resumo" class="resumo">
+            <div class="titulo-section">Resumo</div>
+            <div class="conteudo-section">
+                <p>Professor de Big Data, certificado em Data Analysis e Engenheiro de Dados com pós-graduação.</p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <div class="titulo-section">Portfólio</div>
+            <div class="conteudo-section">
+                <p>Confira alguns dos meus projetos de Data Science.</p>
+            </div>
+        </section>
+
+        <section id="servicos" class="servicos">
+            <div class="titulo-section">Serviços</div>
+            <div class="conteudo-section">
+                <ul>
+                    <li>Análise Descritiva</li>
+                    <li>Análise Diagnóstica</li>
+                    <li>Machine Learning</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <div class="titulo-section">Contato</div>
+            <div class="conteudo-section">
+                <p>Fale comigo! Será uma honra poder te ajudar.</p>
+                <a href="mailto:contato@mateusgalvao.com" class="botao">Enviar E-mail</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Mateus Galvão</p>
+        </footer>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggle-button');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarLinks = sidebar.querySelectorAll('a');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+        }
+
+        // Fecha o menu ao clicar fora
+        document.addEventListener('click', (e) => {
+            const isClickInsideSidebar = sidebar.contains(e.target);
+            const isClickOnButton = toggleButton.contains(e.target);
+            if (!isClickInsideSidebar && !isClickOnButton) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // Fecha o menu ao clicar em qualquer link do menu
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('open');
+            });
+        });
+
+        const idiomaBarras = document.querySelectorAll('.idioma-barra');
+        const bolinhas = document.querySelectorAll('.bolinha');
+        let idiomaAtual = 0;
+
+        function mostrarIdioma(idx) {
+            idiomaBarras.forEach((el, i) => {
+                el.classList.toggle('ativo', i === idx);
+            });
+            bolinhas.forEach((b, i) => {
+                b.classList.toggle('ativo', i === idx);
+            });
+        }
+
+        bolinhas.forEach((bolinha, idx) => {
+            bolinha.addEventListener('click', () => {
+                idiomaAtual = idx;
+                mostrarIdioma(idiomaAtual);
+            });
+        });
+
+        // Inicializa mostrando o primeiro idioma
+        mostrarIdioma(idiomaAtual);
+    </script>
+</body>
+
+</html>
