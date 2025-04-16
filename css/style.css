@@ -33,24 +33,19 @@ body {
     align-items: flex-start;
     gap: 20px;
     transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
-    /* Adiciona transições */
     z-index: 1000;
     background-color: transparent;
     overflow: hidden;
     pointer-events: none;
     opacity: 0;
-    /* Inicialmente invisível */
     transform: translateY(-20px);
-    /* Move ligeiramente para cima */
 }
 
 .sidebar.open {
     max-height: 500px;
     pointer-events: auto;
     opacity: 1;
-    /* Torna visível */
     transform: translateY(0);
-    /* Reseta a posição */
 }
 
 .sidebar a {
@@ -153,7 +148,6 @@ footer a {
     }
 }
 
-/* Estilo para as subseções */
 .subsecao {
     margin-top: 20px;
 }
@@ -174,10 +168,9 @@ footer a {
     font-size: 1em;
 }
 
-/* Estilo para as barras de nível */
 .barra-nivel {
     margin: 30px 0;
-    position: relative; /* ESSENCIAL para o balão */
+    position: relative; 
     text-align: left;
     width: 40%;
     margin-left: auto;
@@ -199,8 +192,6 @@ footer a {
     background: #acaaaa;
     border-radius: 5px;
     position: relative;
-    /* Remova ou comente a linha abaixo */
-    /* overflow: hidden; */
 }
 
 .barra-nivel .nivel {
@@ -208,7 +199,7 @@ footer a {
     width: 100%;
     display: block;
     border-radius: 5px 0 0 5px;
-    position: relative; /* Adicione esta linha */
+    position: relative;
 }
 
 .barra-nivel .nivel::after {
