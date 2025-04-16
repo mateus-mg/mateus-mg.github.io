@@ -338,3 +338,104 @@ footer a {
     background: #ff007f;
     box-shadow: 0 0 0 2px #ff007f33;
 }
+
+.contato form {
+    background: #fff;
+    padding: 24px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px #0001;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contato label {
+    font-weight: 600;
+    color: #ff007f;
+    margin-bottom: 4px;
+}
+
+.contato input,
+.contato textarea {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1em;
+    transition: border 0.2s;
+    outline: none;
+    background: #fafafa;
+}
+
+.contato input:focus,
+.contato textarea:focus {
+    border-color: #ff007f;
+    background: #fff;
+}
+
+.contato .botao {
+    background: #ff007f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.contato .botao:hover {
+    background: #d6006b;
+}
+
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 24px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px #0001;
+}
+
+.form-contato label {
+    font-weight: 600;
+    color: #ff007f;
+    margin-bottom: 4px;
+}
+
+.form-contato input,
+.form-contato textarea {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1em;
+    transition: border 0.2s;
+    outline: none;
+    background: #fafafa;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    border-color: #ff007f;
+    background: #fff;
+}
+
+.form-contato .botao {
+    background: #ff007f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.form-contato .botao:hover {
+    background: #d6006b;
+}
