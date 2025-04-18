@@ -68,3 +68,17 @@ bolinhasSkills.forEach((bolinha, idx) => {
 
 // Inicializa mostrando o primeiro grupo de skills
 mostrarSkills(skillsAtual);
+
+// Botão Voltar ao Topo
+const btnTopo = document.getElementById('btn-topo');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        btnTopo.classList.add('mostrar');
+    } else {
+        btnTopo.classList.remove('mostrar');
+    }
+});
+btnTopo.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
