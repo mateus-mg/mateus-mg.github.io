@@ -221,7 +221,14 @@
                     <input type="email" id="email" name="Email" required>
 
                     <label for="assunto">Assunto:</label>
-                    <input type="text" id="assunto" name="_subject" required>
+                    <select id="assunto" name="_subject" required>
+                        <option value="" disabled selected>Selecione um assunto</option>
+                        <option value="Orçamento">Orçamento</option>
+                        <option value="Parceria">Parceria</option>
+                        <option value="Dúvida">Dúvida</option>
+                        <option value="Feedback">Feedback</option>
+                        <option value="Outro">Outro</option>
+                    </select>
 
                     <label for="mensagem">Mensagem:</label>
                     <textarea id="mensagem" name="Mensagem" rows="4" required></textarea>
