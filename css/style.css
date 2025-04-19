@@ -613,7 +613,6 @@ footer a {
     }
 }
 
-/* Sugestão 7: Overlay do menu lateral */
 .sidebar-overlay {
     display: none;
     position: fixed;
@@ -631,7 +630,6 @@ footer a {
     opacity: 1;
 }
 
-/* Sugestão 7: Sidebar ativa para mobile */
 @media (max-width: 900px) {
     .sidebar.ativo {
         left: 0;
@@ -644,5 +642,135 @@ footer a {
     font-size: 1.2em;
     vertical-align: middle;
     color: #2CA6A4;
-    /* Segue a paleta do site, mas mantém o padrão se sobrescrito pelo Font Awesome */
+}
+
+/* Adiciona container flex para perfil e skills lado a lado */
+.sobre-flex-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.sobre-flex-container .subsecao {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* Ajusta proporção das subseções: Skills menor, Perfil um pouco maior */
+.sobre-flex-container #perfil {
+    flex: 1.1 1 0;
+    max-width: 400px;
+}
+.sobre-flex-container #skills {
+    flex: 1.3 1 0;
+}
+/* Skills ainda menor, Perfil proporcionalmente maior */
+.sobre-flex-container #perfil {
+    flex: 1.3 1 0;
+    max-width: 440px;
+}
+.sobre-flex-container #skills {
+    flex: 1 1 0;
+}
+/* Mantém espaçamento já definido anteriormente */
+
+@media (max-width: 900px) {
+    .sobre-flex-container #perfil,
+    .sobre-flex-container #skills {
+        max-width: none;
+        flex: 1 1 0;
+    }
+}
+
+/* Para telas menores, empilha as subseções */
+@media (max-width: 900px) {
+    .sobre-flex-container {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .sobre-flex-container .subsecao {
+        margin-bottom: 30px;
+    }
+}
+
+/* Barra de idiomas alinhada à esquerda e ocupando toda a largura da subseção */
+#perfil #idioma-barras-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+#perfil .idioma-barra {
+    align-items: flex-start;
+    width: 100%;
+}
+#perfil .barra-nivel {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
+#perfil .idiomas-carrossel {
+    justify-content: flex-start;
+}
+
+/* Espaçamento entre subseções dentro do flex container */
+.sobre-flex-container .subsecao:not(:last-child) {
+    margin-right: 40px;
+}
+@media (max-width: 900px) {
+    .sobre-flex-container .subsecao:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+/* Skills: barras alinhadas à esquerda e ocupando toda a largura */
+#skills #skills-barras-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+#skills .skills-barra {
+    align-items: flex-start;
+    width: 100%;
+}
+#skills .barra-nivel {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
+#skills .skills-carrossel {
+    justify-content: flex-start;
+}
+
+/* Deixa as subseções com tamanhos iguais */
+.sobre-flex-container #perfil,
+.sobre-flex-container #skills {
+    flex: 1 1 0;
+    max-width: none;
+}
+
+/* Barras das duas subseções ocupando 80% do espaço */
+#perfil .barra-nivel,
+#skills .barra-nivel {
+    width: 80%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
+
+@media (max-width: 900px) {
+    .sobre-flex-container #perfil,
+    .sobre-flex-container #skills {
+        max-width: none;
+        flex: 1 1 0;
+    }
+    #perfil .barra-nivel,
+    #skills .barra-nivel {
+        width: 100%;
+    }
 }
