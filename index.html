@@ -7,6 +7,8 @@
     <title>Mateus Galvão - Portfólio</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="20x20" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -20,11 +22,25 @@
 
     <button class="sidebar-toggle" id="toggle-button" onclick="toggleSidebar()">☰</button>
 
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
     <div class="main-content" id="main-content">
         <header>
             <p>Olá, seja bem-vindo!</p>
             <h1>Eu sou Mateus Galvão</h1>
             <p>Engenheiro de Dados | Cientista de Dados | Arquiteto de Dados</p>
+            <div class="header-icons">
+                <a href="#contato" title="E-mail" class="icon-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/mateus-mg" target="_blank" title="GitHub" class="icon-link">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mateusmarquesgalvao/" target="_blank" title="LinkedIn"
+                    class="icon-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
         </header>
 
         <section id="sobre" class="sobre">
@@ -48,8 +64,7 @@
                                     <div class="barra-nivel">
                                         <span>Português</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 100%; background-color: #ff007f;"
-                                                data-nivel="Nativo"></div>
+                                            <div class="nivel" style="width: 100%;" data-nivel="Nativo"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -57,8 +72,7 @@
                                     <div class="barra-nivel">
                                         <span>Inglês</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 75%; background-color: #ff007f;"
-                                                data-nivel="Fluente"></div>
+                                            <div class="nivel" style="width: 75%;" data-nivel="Fluente"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -66,8 +80,7 @@
                                     <div class="barra-nivel">
                                         <span>Espanhol</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 50%; background-color: #ff007f;"
-                                                data-nivel="Intermediário"></div>
+                                            <div class="nivel" style="width: 50%;" data-nivel="Intermediário"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -75,8 +88,7 @@
                                     <div class="barra-nivel">
                                         <span>Francês</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 25%; background-color: #ff007f;"
-                                                data-nivel="Básico"></div>
+                                            <div class="nivel" style="width: 25%;" data-nivel="Básico"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -99,75 +111,65 @@
                             <div id="skills-barras-container" style="width: 100%;">
                                 <div class="skills-barra ativo">
                                     <div class="barra-nivel">
-                                        <span>Python</span>
+                                        <span><i class="fab fa-python skill-icon"></i> Python</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 100%; background-color: #ff007f;"
-                                                data-nivel="Avançado"></div>
+                                            <div class="nivel" style="width: 100%;" data-nivel="Avançado"></div>
                                         </div>
                                     </div>
                                     <div class="barra-nivel">
-                                        <span>SQL</span>
+                                        <span><i class="fas fa-database skill-icon"></i> SQL</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 66.66%; background-color: #ff007f;"
-                                                data-nivel="Intermediário"></div>
+                                            <div class="nivel" style="width: 66.66%;" data-nivel="Intermediário"></div>
                                         </div>
                                     </div>
                                     <div class="barra-nivel">
-                                        <span>Power BI</span>
+                                        <span><i class="fas fa-chart-bar skill-icon"></i> Power BI</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 66.66%; background-color: #ff007f;"
-                                                data-nivel="Intermediário"></div>
+                                            <div class="nivel" style="width: 66.66%;" data-nivel="Intermediário"></div>
                                         </div>
                                     </div>
                                     <div class="barra-nivel">
-                                        <span>Machine Learning</span>
+                                        <span><i class="fas fa-robot skill-icon"></i> Machine Learning</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 33.33%; background-color: #ff007f;"
-                                                data-nivel="Básico"></div>
+                                            <div class="nivel" style="width: 33.33%;" data-nivel="Básico"></div>
                                         </div>
                                     </div>
                                     <div class="barra-nivel">
-                                        <span>Excel</span>
+                                        <span><i class="fas fa-file-excel skill-icon"></i> Excel</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 100%; background-color: #ff007f;"
-                                                data-nivel="Avançado"></div>
+                                            <div class="nivel" style="width: 100%;" data-nivel="Avançado"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="skills-barra">
                                     <div class="barra-nivel">
-                                        <span>ETL</span>
+                                        <span><i class="fas fa-exchange-alt skill-icon"></i> ETL</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 66.66%; background-color: #ff007f;"
-                                                data-nivel="Intermediário"></div>
+                                            <div class="nivel" style="width: 66.66%;" data-nivel="Intermediário"></div>
                                         </div>
                                     </div>
                                     <div class="barra-nivel">
-                                        <span>Git</span>
+                                        <span><i class="fab fa-git-alt skill-icon"></i> Git</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 66.66%; background-color: #ff007f;"
-                                                data-nivel="Intermediário"></div>
+                                            <div class="nivel" style="width: 66.66%;" data-nivel="Intermediário"></div>
                                         </div>
                                     </div>
                                     <div class="barra-nivel">
-                                        <span>Docker</span>
+                                        <span><i class="fab fa-docker skill-icon"></i> Docker</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 33.33%; background-color: #ff007f;"
-                                                data-nivel="Básico"></div>
+                                            <div class="nivel" style="width: 33.33%;" data-nivel="Básico"></div>
                                         </div>
                                     </div>
                                     <div class="barra-nivel">
-                                        <span>Linux</span>
+                                        <span><i class="fab fa-linux skill-icon"></i> Linux</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 33.33%; background-color: #ff007f;"
-                                                data-nivel="Básico"></div>
+                                            <div class="nivel" style="width: 33.33%;" data-nivel="Básico"></div>
                                         </div>
                                     </div>
                                     <div class="barra-nivel">
-                                        <span>Power Query</span>
+                                        <span><i class="fas fa-filter skill-icon"></i> Power Query</span>
                                         <div class="nivel-fundo">
-                                            <div class="nivel" style="width: 66.66%; background-color: #ff007f;"
-                                                data-nivel="Intermediário"></div>
+                                            <div class="nivel" style="width: 66.66%;" data-nivel="Intermediário"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -253,19 +255,43 @@
     <a href="#" id="btn-topo" class="botao" title="Voltar ao início"><span class="seta-topo">&#8593;</span></a>
     <script src="js/scripts.js"></script>
     <script>
-    // Rolagem suave para o botão "Fale Comigo"
-    document.addEventListener('DOMContentLoaded', function() {
-        const btnFaleComigo = document.querySelector('.botao.fale-comigo');
-        if (btnFaleComigo) {
-            btnFaleComigo.addEventListener('click', function(e) {
-                e.preventDefault();
-                const contato = document.getElementById('contato');
-                if (contato) {
-                    contato.scrollIntoView({ behavior: 'smooth' });
-                }
+        // Rolagem suave para o botão "Fale Comigo"
+        document.addEventListener('DOMContentLoaded', function () {
+            const btnFaleComigo = document.querySelector('.botao.fale-comigo');
+            if (btnFaleComigo) {
+                btnFaleComigo.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const contato = document.getElementById('contato');
+                    if (contato) {
+                        contato.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+
+            // Scroll suave para o ícone de e-mail
+            const emailIcon = document.querySelector('.header-icons .icon-link[href="#contato"]');
+            if (emailIcon) {
+                emailIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const contato = document.getElementById('contato');
+                    if (contato) {
+                        contato.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }
+
+            // Sugestão 7: Overlay do menu lateral
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const toggleBtn = document.getElementById('toggle-button');
+            toggleBtn.addEventListener('click', function () {
+                overlay.classList.toggle('ativo');
             });
-        }
-    });
+            overlay.addEventListener('click', function () {
+                overlay.classList.remove('ativo');
+                sidebar.classList.remove('ativo');
+            });
+        });
     </script>
 </body>
 

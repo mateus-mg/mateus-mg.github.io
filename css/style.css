@@ -114,6 +114,27 @@ header p {
     margin-bottom: 10px;
 }
 
+.header-icons {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.header-icons .icon-link {
+    color: #2CA6A4;
+    font-size: 2em;
+    transition: color 0.25s, transform 0.25s;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header-icons .icon-link:hover {
+    color: #7B8794;
+    transform: scale(1.12);
+}
+
 section {
     padding: 60px 20px;
     background-color: #FFFFFF;
@@ -152,12 +173,19 @@ section {
     color: #fff;
     border: none;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.15s, box-shadow 0.15s;
 }
 
 .botao:hover {
-    background: #0A2342;
+    background: #7B8794;
     color: #fff;
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px rgba(44, 166, 164, 0.15);
+}
+
+.botao:focus {
+    outline: 2px solid #7B8794;
+    outline-offset: 2px;
 }
 
 footer {
@@ -409,7 +437,7 @@ footer a {
 }
 
 .contato .botao:hover {
-    background: #0A2342;
+    background: #7B8794;
     color: #fff;
 }
 
@@ -440,7 +468,7 @@ footer a {
     font-size: 1em;
     transition: border 0.2s;
     outline: none;
-    background: #D1D5DB;
+    background: #fff;
     color: #0A2342;
 }
 
@@ -461,11 +489,19 @@ footer a {
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
-    transition: background 0.2s;
+    transition: background 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
-.form-contato .botao:hover {
-    background: #0A2342;
+.form-contato .botao:hover,
+.form-contato .botao:focus {
+    background: #7B8794;
+    color: #fff;
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px rgba(123, 137, 148, 0.15);
+}
+
+.form-contato .botao:focus {
+    background: #7B8794;
     color: #fff;
 }
 
@@ -529,4 +565,38 @@ footer a {
     .seta-topo {
         font-size: 1em;
     }
+}
+
+/* Sugestão 7: Overlay do menu lateral */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    transition: opacity 0.3s;
+}
+
+.sidebar-overlay.ativo {
+    display: block;
+    opacity: 1;
+}
+
+/* Sugestão 7: Sidebar ativa para mobile */
+@media (max-width: 900px) {
+    .sidebar.ativo {
+        left: 0;
+        z-index: 10;
+    }
+}
+
+.skill-icon {
+    margin-right: 8px;
+    font-size: 1.2em;
+    vertical-align: middle;
+    color: #2CA6A4;
+    /* Segue a paleta do site, mas mantém o padrão se sobrescrito pelo Font Awesome */
 }
