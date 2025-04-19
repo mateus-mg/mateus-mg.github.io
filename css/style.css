@@ -19,6 +19,33 @@ body {
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.2em;
+    transition: color 0.3s, background 0.3s;
+}
+
+#toggle-button {
+    transition: color 0.12s;
+    font-size: 1.25em;
+    padding: 7px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#toggle-button .icone-menu {
+    display: inline-block;
+    transition: transform 0.18s, opacity 0.14s;
+    will-change: transform, opacity;
+}
+
+#toggle-button.trocando .icone-menu {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+#toggle-button .icone-menu.entrando {
+    opacity: 1;
+    transform: scale(1.1);
+    transition: transform 0.18s, opacity 0.14s;
 }
 
 .sidebar {
@@ -435,13 +462,18 @@ footer a {
 
 /* Botão Voltar ao Topo */
 #btn-topo {
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
+    position: fixed !important;
+    bottom: 32px !important;
+    right: 32px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1200;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s;
+    width: 44px;
+    height: 44px;
 }
 
 #btn-topo.mostrar {
@@ -451,21 +483,22 @@ footer a {
 
 #btn-topo.botao {
     margin: 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px #0002;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px #0003;
     background: #ff007f;
     color: #fff;
-    border: 1px solid #ff007f;
+    border: none;
+    padding: 0;
+    font-size: 1.2em;
 }
 
 #btn-topo.botao:hover {
-    background: #fff;
-    color: #000;
-    border: 1px solid #000;
+    background: #000;
+    color: #fff;
 }
 
 .seta-topo {
-    font-size: 2.2em;
+    font-size: 1.3em;
     line-height: 1;
     display: block;
     text-align: center;
@@ -473,7 +506,15 @@ footer a {
 
 @media screen and (max-width: 768px) {
     #btn-topo {
-        right: 16px;
-        bottom: 16px;
+        right: 12px !important;
+        bottom: 12px !important;
+        width: 36px;
+        height: 36px;
+    }
+    #btn-topo.botao {
+        font-size: 1em;
+    }
+    .seta-topo {
+        font-size: 1em;
     }
 }

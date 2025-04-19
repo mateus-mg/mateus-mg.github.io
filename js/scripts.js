@@ -4,7 +4,27 @@ const sidebarLinks = sidebar.querySelectorAll('a');
 
 function toggleSidebar() {
     sidebar.classList.toggle('open');
+    const iconeAtual = toggleButton.querySelector('.icone-menu');
+    if (iconeAtual) {
+        toggleButton.classList.add('trocando');
+        iconeAtual.classList.remove('entrando');
+        // Fade out + scale down
+        setTimeout(() => {
+            const icone = sidebar.classList.contains('open') ? '✖' : '☰';
+            toggleButton.innerHTML = `<span class="icone-menu entrando">${icone}</span>`;
+            // Fade in + scale up
+            setTimeout(() => {
+                const novoIcone = toggleButton.querySelector('.icone-menu');
+                if (novoIcone) novoIcone.classList.add('entrando');
+                toggleButton.classList.remove('trocando');
+            }, 10);
+        }, 140);
+    }
 }
+
+// Garante o ícone correto ao carregar a página
+const iconeInicial = sidebar.classList.contains('open') ? '✖' : '☰';
+toggleButton.innerHTML = `<span class="icone-menu entrando">${iconeInicial}</span>`;
 
 // Fecha o menu ao clicar fora
 document.addEventListener('click', (e) => {
