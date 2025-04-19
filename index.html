@@ -184,7 +184,7 @@
             </div>
             <!-- Botões personalizados -->
             <div style="text-align:center; margin-top: 30px;">
-                <a href="#contato" class="botao">Fale Comigo</a>
+                <a href="#contato" class="botao fale-comigo">Fale Comigo</a>
                 <a href="Curriculo.pdf" class="botao" download>Baixe meu CV</a>
             </div>
         </section>
@@ -252,6 +252,21 @@
     <!-- Botão Voltar ao Início -->
     <a href="#" id="btn-topo" class="botao" title="Voltar ao início"><span class="seta-topo">&#8593;</span></a>
     <script src="js/scripts.js"></script>
+    <script>
+    // Rolagem suave para o botão "Fale Comigo"
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnFaleComigo = document.querySelector('.botao.fale-comigo');
+        if (btnFaleComigo) {
+            btnFaleComigo.addEventListener('click', function(e) {
+                e.preventDefault();
+                const contato = document.getElementById('contato');
+                if (contato) {
+                    contato.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+    });
+    </script>
 </body>
 
 </html>
