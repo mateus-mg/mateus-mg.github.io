@@ -50,7 +50,7 @@ body {
 }
 
 .sidebar {
-    width: 150px;
+    width: 130px;
     max-height: 0;
     padding: 100px 20px 0;
     position: fixed;
@@ -68,6 +68,7 @@ body {
     opacity: 0;
     transform: translateY(-20px);
     box-shadow: 2px 0 16px #0001;
+    border-radius: 10px;
 }
 
 .sidebar.open {
@@ -99,8 +100,45 @@ body {
 
 header {
     text-align: center;
-    padding: 100px 20px 60px;
-    background: #0A2342;
+    background: #0A2342 url('../img/header-bg.jpg') center center/cover no-repeat;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 35, 66, 0.7);
+    /* overlay escuro */
+    z-index: 2;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/header-bg.jpg') center center/cover no-repeat;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+header>* {
+    position: relative;
+    z-index: 3;
 }
 
 header h1 {
@@ -535,11 +573,19 @@ footer a {
     border: none;
     padding: 0;
     font-size: 1.2em;
+    outline: none;
 }
 
 #btn-topo.botao:hover {
-    background: #0A2342;
+    background: #7B8794;
     color: #fff;
+}
+
+#btn-topo.botao:focus {
+    background: #7B8794;
+    color: #fff;
+    outline: none;
+    box-shadow: 0 2px 12px #0003;
 }
 
 .seta-topo {
