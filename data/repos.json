@@ -1,0 +1,38 @@
+[
+  {
+    "name": "mateus-mg",
+    "description": "No description available.",
+    "html_url": "https://github.com/mateus-mg/mateus-mg",
+    "language": "HTML",
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-04-27T21:39:13Z"
+  },
+  {
+    "name": "media-organizer",
+    "description": "Python tool that automatically organizes music, books and comics into structured libraries using hardlinks. Features metadata enrichment, genre validation, Navidrome sync and conflict resolution.",
+    "html_url": "https://github.com/mateus-mg/media-organizer",
+    "language": "Python",
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-04-25T23:23:23Z"
+  },
+  {
+    "name": "media-converter",
+    "description": "Universal media converter for HEIC/HEVC. Hardware-accelerated video transcoding (NVENC/QSV), automatic quality, metadata preservation, and smart batch processing.",
+    "html_url": "https://github.com/mateus-mg/media-converter",
+    "language": "Python",
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-04-25T17:49:55Z"
+  },
+  {
+    "name": "control-panel",
+    "description": "Server management system for home servers. Controls external HD drives and Docker containers through a simple CLI interface.",
+    "html_url": "https://github.com/mateus-mg/control-panel",
+    "language": "Python",
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-04-25T17:46:25Z"
+  }
+]

@@ -1,0 +1,42 @@
+name: Update Repository Data
+
+on:
+  workflow_dispatch:  # Apenas manual - clique em "Run workflow" quando quiser atualizar
+
+permissions:
+  contents: read
+
+jobs:
+  update-repos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Fetch repositories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/fetch_repos.py
+
+      - name: Upload repos.json as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: repos-json
+          path: data/repos.json
+          retention-days: 7
+
+      - name: Show diff preview
+        run: |
+          echo "=== Preview of changes ==="
+          git diff data/repos.json || true
+          echo ""
+          echo "To apply these changes manually:"
+          echo "1. Download the artifact 'repos-json' from this run"
+          echo "2. Replace data/repos.json in your local repo"
+          echo "3. Commit and push (or create a PR)"
