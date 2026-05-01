@@ -1,10 +1,11 @@
 name: Update Repository Data
 
 on:
-  workflow_dispatch:  # Apenas manual - clique em "Run workflow" quando quiser atualizar
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
 
 jobs:
   update-repos:
@@ -24,19 +25,26 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/fetch_repos.py
 
-      - name: Upload repos.json as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: repos-json
-          path: data/repos.json
-          retention-days: 7
-
-      - name: Show diff preview
+      - name: Create Pull Request if changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "=== Preview of changes ==="
-          git diff data/repos.json || true
-          echo ""
-          echo "To apply these changes manually:"
-          echo "1. Download the artifact 'repos-json' from this run"
-          echo "2. Replace data/repos.json in your local repo"
-          echo "3. Commit and push (or create a PR)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet data/repos.json; then
+            echo "No changes to repos.json"
+            exit 0
+          fi
+
+          BRANCH="update-repos-data-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
+          git add data/repos.json
+          git commit -m "chore: update repository data"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "chore: update repository data" \
+            --body "Auto-generated update from GitHub API." \
+            --base main \
+            --head "$BRANCH"
