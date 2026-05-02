@@ -1,7 +1,9 @@
 name: Update Repository Data
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Mantém execução manual
+  schedule:
+    - cron: '0 0 * * 0'  # Todo domingo à meia-noite (UTC)
 
 permissions:
   contents: write
