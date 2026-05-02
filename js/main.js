@@ -83,19 +83,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'project-image-wrapper';
 
-    if (repo.image) {
-      const img = document.createElement('img');
-      img.src = repo.image;
-      img.loading = 'lazy';
-      img.alt = `Preview do projeto ${repo.name || 'Unnamed Project'}`;
-      imageWrapper.appendChild(img);
-    } else {
+    // Tentar usar imagem local automaticamente
+    const localImagePath = `assets/projects/${repo.name}.png`;
+
+    const img = document.createElement('img');
+    img.src = localImagePath;
+    img.loading = 'lazy';
+    img.alt = `Preview of ${repo.name || 'Unnamed Project'}`;
+
+    // Se imagem não existir, mostrar placeholder
+    img.onerror = function() {
+      this.remove();
       const placeholder = document.createElement('div');
       placeholder.className = 'project-image-placeholder';
-      const iconClass = repo.language && techIcons[repo.language] ? techIcons[repo.language] : 'fa-solid fa-code';
+      const iconClass = repo.language && techIcons[repo.language]
+        ? techIcons[repo.language]
+        : 'fa-solid fa-code';
       placeholder.innerHTML = `<i class="${iconClass}"></i>`;
       imageWrapper.appendChild(placeholder);
-    }
+    };
+
+    imageWrapper.appendChild(img);
 
     const name = document.createElement('h3');
     name.textContent = repo.name || 'Unnamed Project';
