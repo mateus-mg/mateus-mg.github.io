@@ -4,22 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mateus Marques — Python Developer | Backend & AI. Portfolio showcasing projects, skills, and experience.">
+  <link rel="canonical" href="https://mateus-mg.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mateus Marques — Python Developer | Backend & AI">
+  <meta property="og:description" content="Python developer passionate about technology, focused on backend, data, and artificial intelligence.">
+  <meta property="og:image" content="https://mateus-mg.github.io/assets/og-image.png">
+  <meta property="og:url" content="https://mateus-mg.github.io/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mateus Marques — Python Developer | Backend & AI">
+  <meta name="twitter:description" content="Python developer passionate about technology, focused on backend, data, and artificial intelligence.">
+  <meta name="twitter:image" content="https://mateus-mg.github.io/assets/og-image.png">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mateus Marques",
+    "jobTitle": "Python Developer",
+    "url": "https://mateus-mg.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/mateus-marques-galv%C3%A3o-759b3a3a/",
+      "https://github.com/mateus-mg"
+    ]
+  }
+  </script>
+
   <title>Mateus Marques — Python Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">Mateus Marques</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link">Sobre</a></li>
+        <li><a href="#tech-stack" class="nav-link">Tech Stack</a></li>
+        <li><a href="#experience" class="nav-link">Experiência</a></li>
+        <li><a href="#projects" class="nav-link">Projetos</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" data-aos="fade-up">
     <div class="container">
       <div class="avatar">
         <img src="https://github.com/mateus-mg.png" alt="Mateus Marques">
       </div>
       <h1>Mateus Marques</h1>
       <p class="subtitle">Python Developer | Backend &amp; AI</p>
+      <div class="hero-cta">
+        <a href="https://www.linkedin.com/in/mateus-marques-galv%C3%A3o-759b3a3a/" class="cta-button" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="mailto:mateusmarques2011@live.com" class="cta-button">
+          <i class="fa-solid fa-envelope"></i> Email
+        </a>
+        <a href="https://github.com/mateus-mg" class="cta-button" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
       <div class="socials">
         <a href="https://www.linkedin.com/in/mateus-marques-galv%C3%A3o-759b3a3a/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:mateusmarques2011@live.com">Email</a>
@@ -29,7 +91,7 @@
   </section>
 
   <!-- About Me -->
-  <section class="about">
+  <section id="about" class="about" data-aos="fade-up" data-aos-delay="100">
     <div class="container">
       <h2>About Me</h2>
       <p>
@@ -41,60 +103,60 @@
   </section>
 
   <!-- Tech Stack -->
-  <section>
+  <section id="tech-stack" data-aos="fade-up" data-aos-delay="100">
     <div class="container">
       <h2>Tech Stack</h2>
       <div class="tech-grid">
         <div class="tech-item">
-          <div class="tech-icon" style="background:#3776AB;">Py</div>
+          <i class="fa-brands fa-python tech-fa-icon" aria-label="Python"></i>
           Python
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#092E20;">Dj</div>
+          <i class="fa-brands fa-python tech-fa-icon" aria-label="Django"></i>
           Django
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#a30000;">DRF</div>
+          <i class="fa-solid fa-code tech-fa-icon" aria-label="Django REST Framework"></i>
           DRF
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#009688;">Fa</div>
+          <i class="fa-solid fa-bolt tech-fa-icon" aria-label="FastAPI"></i>
           FastAPI
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#336791;">Pg</div>
+          <i class="fa-solid fa-database tech-fa-icon" aria-label="PostgreSQL"></i>
           PostgreSQL
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#003B57;">Sq</div>
+          <i class="fa-solid fa-database tech-fa-icon" aria-label="SQLite"></i>
           SQLite
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#412991;">AI</div>
+          <i class="fa-solid fa-robot tech-fa-icon" aria-label="OpenAI"></i>
           OpenAI
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#1C3C3C;">Lc</div>
+          <i class="fa-solid fa-link tech-fa-icon" aria-label="LangChain"></i>
           LangChain
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#FF4B4B;">St</div>
+          <i class="fa-solid fa-stream tech-fa-icon" aria-label="Streamlit"></i>
           Streamlit
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#150458;">Pd</div>
+          <i class="fa-solid fa-table tech-fa-icon" aria-label="Pandas"></i>
           Pandas
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#2496ED;">Do</div>
+          <i class="fa-brands fa-docker tech-fa-icon" aria-label="Docker"></i>
           Docker
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#232F3E;">AWS</div>
+          <i class="fa-brands fa-aws tech-fa-icon" aria-label="AWS"></i>
           AWS
         </div>
         <div class="tech-item">
-          <div class="tech-icon" style="background:#F05032;">Git</div>
+          <i class="fa-brands fa-git-alt tech-fa-icon" aria-label="Git"></i>
           Git
         </div>
       </div>
@@ -102,7 +164,7 @@
   </section>
 
   <!-- Education & Courses -->
-  <section>
+  <section data-aos="fade-up" data-aos-delay="100">
     <div class="container">
       <h2>Education &amp; Courses</h2>
       <div class="course-list">
@@ -143,7 +205,7 @@
   </section>
 
   <!-- Experience -->
-  <section class="experience">
+  <section id="experience" class="experience" data-aos="fade-up" data-aos-delay="100">
     <div class="container">
       <h2>Experience</h2>
       <div class="experience-list">
@@ -231,7 +293,7 @@
   </section>
 
   <!-- Projects -->
-  <section>
+  <section id="projects" data-aos="fade-up" data-aos-delay="100">
     <div class="container">
       <h2>Projects</h2>
       <div id="projects-container" class="projects-grid">
@@ -244,12 +306,13 @@
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer data-aos="fade-up" data-aos-delay="100">
     <div class="container">
       &copy; 2025 Mateus Marques &middot; Built with care and GitHub Pages
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
