@@ -1,12 +1,12 @@
 [
   {
-    "name": "mateus-mg",
+    "name": "mateus-mg.github.io",
     "description": "No description available.",
-    "html_url": "https://github.com/mateus-mg/mateus-mg",
-    "language": "HTML",
+    "html_url": "https://github.com/mateus-mg/mateus-mg.github.io",
+    "language": "CSS",
     "stargazers_count": 0,
     "topics": [],
-    "updated_at": "2026-04-27T21:39:13Z"
+    "updated_at": "2026-05-03T13:58:48Z"
   },
   {
     "name": "media-organizer",
@@ -15,16 +15,16 @@
     "language": "Python",
     "stargazers_count": 0,
     "topics": [],
-    "updated_at": "2026-04-25T23:23:23Z"
+    "updated_at": "2026-05-03T13:56:14Z"
   },
   {
-    "name": "media-converter",
-    "description": "Universal media converter for HEIC/HEVC. Hardware-accelerated video transcoding (NVENC/QSV), automatic quality, metadata preservation, and smart batch processing.",
-    "html_url": "https://github.com/mateus-mg/media-converter",
-    "language": "Python",
+    "name": "mateus-mg",
+    "description": "No description available.",
+    "html_url": "https://github.com/mateus-mg/mateus-mg",
+    "language": null,
     "stargazers_count": 0,
     "topics": [],
-    "updated_at": "2026-04-25T17:49:55Z"
+    "updated_at": "2026-05-03T13:52:11Z"
   },
   {
     "name": "control-panel",
@@ -33,6 +33,15 @@
     "language": "Python",
     "stargazers_count": 0,
     "topics": [],
-    "updated_at": "2026-04-25T17:46:25Z"
+    "updated_at": "2026-05-03T00:27:01Z"
+  },
+  {
+    "name": "media-converter",
+    "description": "Universal media converter for HEIC/HEVC. Hardware-accelerated video transcoding (NVENC/QSV), automatic quality, metadata preservation, and smart batch processing.",
+    "html_url": "https://github.com/mateus-mg/media-converter",
+    "language": "Python",
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-05-02T23:05:13Z"
   }
 ]
