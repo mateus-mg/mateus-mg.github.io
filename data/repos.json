@@ -6,16 +6,7 @@
     "language": null,
     "stargazers_count": 0,
     "topics": [],
-    "updated_at": "2026-05-10T02:37:54Z"
-  },
-  {
-    "name": "mateus-mg.github.io",
-    "description": "No description available.",
-    "html_url": "https://github.com/mateus-mg/mateus-mg.github.io",
-    "language": "CSS",
-    "stargazers_count": 0,
-    "topics": [],
-    "updated_at": "2026-05-03T14:07:05Z"
+    "updated_at": "2026-05-17T02:45:11Z"
   },
   {
     "name": "media-organizer",
@@ -24,7 +15,7 @@
     "language": "Python",
     "stargazers_count": 0,
     "topics": [],
-    "updated_at": "2026-05-03T13:56:14Z"
+    "updated_at": "2026-05-16T21:13:54Z"
   },
   {
     "name": "control-panel",
@@ -33,7 +24,16 @@
     "language": "Python",
     "stargazers_count": 0,
     "topics": [],
-    "updated_at": "2026-05-03T00:27:01Z"
+    "updated_at": "2026-05-16T21:03:17Z"
+  },
+  {
+    "name": "oraculo-budget",
+    "description": "No description available.",
+    "html_url": "https://github.com/mateus-mg/oraculo-budget",
+    "language": null,
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-05-16T21:02:19Z"
   },
   {
     "name": "media-converter",
@@ -42,6 +42,15 @@
     "language": "Python",
     "stargazers_count": 0,
     "topics": [],
-    "updated_at": "2026-05-02T23:05:13Z"
+    "updated_at": "2026-05-10T21:48:50Z"
+  },
+  {
+    "name": "mateus-mg.github.io",
+    "description": "No description available.",
+    "html_url": "https://github.com/mateus-mg/mateus-mg.github.io",
+    "language": "CSS",
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-05-10T02:48:48Z"
   }
 ]
