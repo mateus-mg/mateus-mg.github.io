@@ -6,7 +6,43 @@
     "language": null,
     "stargazers_count": 0,
     "topics": [],
-    "updated_at": "2026-05-17T02:45:11Z"
+    "updated_at": "2026-05-24T02:52:48Z"
+  },
+  {
+    "name": "model-router-hermes",
+    "description": "No description available.",
+    "html_url": "https://github.com/mateus-mg/model-router-hermes",
+    "language": null,
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-05-19T14:02:58Z"
+  },
+  {
+    "name": "automation-worktree",
+    "description": "No description available.",
+    "html_url": "https://github.com/mateus-mg/automation-worktree",
+    "language": "Shell",
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-05-18T20:53:01Z"
+  },
+  {
+    "name": "hermes-central",
+    "description": "No description available.",
+    "html_url": "https://github.com/mateus-mg/hermes-central",
+    "language": null,
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-05-18T11:47:10Z"
+  },
+  {
+    "name": "mateus-mg.github.io",
+    "description": "No description available.",
+    "html_url": "https://github.com/mateus-mg/mateus-mg.github.io",
+    "language": "CSS",
+    "stargazers_count": 0,
+    "topics": [],
+    "updated_at": "2026-05-17T02:55:17Z"
   },
   {
     "name": "media-organizer",
@@ -43,14 +79,5 @@
     "stargazers_count": 0,
     "topics": [],
     "updated_at": "2026-05-10T21:48:50Z"
-  },
-  {
-    "name": "mateus-mg.github.io",
-    "description": "No description available.",
-    "html_url": "https://github.com/mateus-mg/mateus-mg.github.io",
-    "language": "CSS",
-    "stargazers_count": 0,
-    "topics": [],
-    "updated_at": "2026-05-10T02:48:48Z"
   }
 ]
